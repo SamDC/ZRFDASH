@@ -1,0 +1,147 @@
+// bower:scss
+// endbower
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    word-wrap: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*Rules for sizing the icon.*/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/*Rules for using icons as black on a light background.*/
+.material-icons.md-dark { color: rgb(0, 0, 0); color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgb(0, 0, 0); color: rgba(0, 0, 0, 0.26); }
+
+/*Rules for using icons as white on a dark background.*/
+.material-icons.md-light { color: rgb(255, 255, 255); }
+.material-icons.md-light.md-inactive { color: rgb(255, 255, 255); color: rgba(255, 255, 255, 0.3); }
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.dash-panel {
+    height:300px;
+    border: 1px solid #EFEFEF;
+}
+
+.kpi-panel {
+    background-color: #22242A;
+}
+
+.kpi-title {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.kpi-value {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.kpi-container {
+    text-align: center;
+}
+
+.kpi-icon-panel {
+    height: 200px;
+}
+
+.kpi-icon {
+    cursor: pointer;
+}
+
+.pie-chart {
+    height: 200px;
+}
+
+.mt-off {
+    margin-top: 0;
+}
+
+.blue-icon {
+    color: #2196F3;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+.no-margin {
+    margin:0;
+}
+
+.report-row {
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 2px;
+}

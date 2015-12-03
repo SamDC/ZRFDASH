@@ -1,0 +1,90 @@
+<md-dialog aria-label="Component Menu"  ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h4>Add Component</h4>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <i class="material-icons md-24">close</i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <md-radio-group layout="row" layout-align="center center" ng-model="dashMenu.component">
+              <md-radio-button value="chart">Chart</md-radio-button>
+              <md-radio-button value="kpi">KPI</md-radio-button>
+              <md-radio-button value="reports">Reports</md-radio-button>
+            </md-radio-group>
+            <md-input-container flex>
+                <label>Title</label>
+                <input ng-model="dashMenu.title">
+            </md-input-container>
+            <div ng-if="dashMenu.component==='chart'">
+                <h4 class="mt-off">Chart Type</h4>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-raised" ng-class="{'md-primary':isActiveColumn, 'md-default':!isActiveColumn}" ng-click="chartSelect(0)">Column</md-button>
+                    <md-button class="md-raised" ng-class="{'md-primary':isActiveLine, 'md-default':!isActiveLine}" ng-click="chartSelect(1)">Line</md-button>
+                    <md-button class="md-raised" ng-class="{'md-primary':isActiveDoughnut, 'md-default':!isActiveDoughnut}" ng-click="chartSelect(2)">Doughnut</md-button>
+                    <md-button class="md-raised" ng-class="{'md-primary':isActiveDual, 'md-default':!isActiveDual}" ng-click="chartSelect(3)">Dual Series</md-button>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>X Axis</label>
+                        <input ng-model="dashMenu.xAxis">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Y Axis</label>
+                        <input ng-model="dashMenu.yAxis">
+                    </md-input-container>
+                </div>
+                
+                <h4 class="mt-off">Series</h4>
+                
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Measure</label>
+                        <input ng-model="dashMenu.measure">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Label</label>
+                        <input ng-model="dashMenu.label">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Filter</label>
+                        <input ng-model="dashMenu.filter">
+                    </md-input-container>
+                </div>
+                
+            </div>
+            <div ng-if="dashMenu.component==='kpi'">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Measure</label>
+                        <input ng-model="dashMenu.measure">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Filter</label>
+                        <input ng-model="dashMenu.filter">
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <div layout="column" layout-align="center center">
+                        <i class="material-icons md-48">{{iconSelected}}</i>
+                        <h4>{{dashMenu.title}}</h4>
+                    </div>
+                </div>
+                <md-input-container flex>
+                    <label>Search Icons</label>
+                    <input ng-model="iconSearch">
+                </md-input-container>
+                <md-content class="kpi-icon-panel" layout-padding>
+                    <div layout="row" layout-wrap>
+                        <div class="kpi-icon" ng-repeat="icon in icons | filter:iconSearch" layout-padding>
+                            <i class="material-icons md-24" ng-click="selectedIcon(icon.name)">{{icon.name}}</i>
+                        </div>
+                    </div>
+                </md-content>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

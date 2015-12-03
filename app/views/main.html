@@ -1,0 +1,25 @@
+<section data-ng-controller="MainCtrl as ctrl">
+    <div layout="row" layout-wrap>
+        <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex-sm="100" flex-md="100" flex-gt-md="auto">Custom Dialog
+        </md-button>
+        <div class="kpi-panel" flex="100" layout-padding layout="row" layout-sm="column" layout-align="center center">
+            <div flex class="kpi-container" ng-repeat="kpi in dashboardKpiData.kpis" layout-padding>
+                <i class="material-icons blue-icon md-48">{{kpi.icon}}</i>
+                <h2 class="kpi-value no-margin">{{kpi.value | number}}</h2>
+                <h5 class="kpi-title no-margin">{{kpi.title}}</h5>
+            </div>
+        </div>
+        <div class="dash-panel" flex="50" flex-sm="100" layout-padding ng-repeat="panel in dashboardPanelData.panels">
+            <h4 class="mt-off">{{panel.title}}</h4>
+            <linechart ng-if="panel.type==='line'" class="line-chart" data="panel.data" options="panel.chartOptions" height="200"></linechart>
+            <div ng-if="panel.type==='doughnut'">
+                <pie-chart class="pie-chart" data="panel.data" options="panel.chartOptions"></pie-chart>
+            </div>
+            <linechart ng-if="panel.type==='column'" class="line-chart" data="panel.data" options="panel.chartOptions" height="200"></linechart>
+            <div ng-if="panel.type==='reports'" layout="row" ng-repeat="report in panel.data | limitTo: 6">
+                <i class="material-icons blue-icon md-24">folder</i>
+                <h4 class="report-row no-margin">{{report.title}}</h4>
+            </div>
+        </div>
+    </div>
+</section>
